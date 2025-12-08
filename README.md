@@ -1,6 +1,9 @@
 # 🛡 CyberGuard
 **Version 1.0.0 — Multi-Layer Client-Side Security Protection Suite**
 
+|<img width="1280" height="640" alt="cyberguard" src="https://github.com/user-attachments/assets/8a88eac9-b7eb-40d7-b7a1-bf4f85b0a288" />  |
+|---|
+
 - The **CyberGuard** delivers a modular, multi-layer security system for modern web applications.  
 - It bundles client-side anomaly detection, DDoS-Guard, DOM protection, input shielding, service-worker hardening 
   - and UI blackout controls into one compact package.
