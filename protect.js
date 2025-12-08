@@ -1,15 +1,10 @@
-/* ============================================================
-   BYLICKILABS – Unified Security Layer
-   Version: 1.2 (COMPLETE BUILD)
-   © Thorsten Bylicki | © BYLICKILABS
-   ============================================================ */
+/* =============================================================
+   ©Thorsten Bylicki | ©BYLICKILABS – Unified Security Framework  
+   Version: 1.0
+   ============================================================= */
 
 (() => {
     'use strict';
-
-    /* ---------------------------------------------------------
-       CORE ELEMENTS
-    --------------------------------------------------------- */
 
     const html = document.documentElement;
     const blackout = document.getElementById('blackout');
@@ -24,10 +19,6 @@
         "- Integrität und Schutz stehen an erster Stelle.\n\n" +
         "©Thorsten Bylicki | ©BYLICKILABS\n" +
         "- https://github.com/bylickilabs";
-
-    /* ---------------------------------------------------------
-       HELPER FUNCTIONS
-    --------------------------------------------------------- */
 
     const isEditable = (el) => {
         if (!el) return false;
@@ -44,9 +35,6 @@
 
     const guardActive = () => !securityLocked;
 
-    /* ---------------------------------------------------------
-       FREEZE-LAYER CREATION
-    --------------------------------------------------------- */
     function createFreezeLayer() {
         freezeLayer = document.createElement("div");
         Object.assign(freezeLayer.style, {
@@ -82,9 +70,6 @@
         document.body.appendChild(freezeLayer);
     }
 
-    /* ---------------------------------------------------------
-       WARNING POPUP (VOR ALERT + FREEZE)
-    --------------------------------------------------------- */
     function showSecurityPopup(after) {
         const popup = document.createElement("div");
 
@@ -139,17 +124,12 @@
         };
     }
 
-    /* ---------------------------------------------------------
-       HARD SECURITY LOCK (Popup → Alert → Freeze)
-    --------------------------------------------------------- */
     function activateSecurityLock(reason) {
         if (securityLocked) return;
         securityLocked = true;
 
-        // 1) Popup zuerst
         showSecurityPopup(() => {
 
-            // 2) Danach Browser-Alert
             setTimeout(() => {
                 alert(
                     SECURITY_MESSAGE +
@@ -157,7 +137,6 @@
                 );
             }, 30);
 
-            // 3) Dann Freeze-Layer & Blackout
             setTimeout(() => {
                 createFreezeLayer();
                 showBlackout();
@@ -165,10 +144,6 @@
             }, 80);
         });
     }
-
-    /* ---------------------------------------------------------
-       CONTEXT / SELECTION / CLIPBOARD / DRAG PROTECTION
-    --------------------------------------------------------- */
 
     document.addEventListener('contextmenu', (e) => {
         if (!guardActive()) return e.preventDefault();
@@ -195,17 +170,12 @@
         if (!isEditable(e.target)) e.preventDefault();
     }, { capture: true });
 
-    /* ---------------------------------------------------------
-       KEYBOARD PROTECTION (inkl. SOFORTIGER DEVTOOLS-LOCK)
-    --------------------------------------------------------- */
-
     document.addEventListener('keydown', (e) => {
         if (!guardActive()) return e.preventDefault();
 
         const key = (e.key || '').toLowerCase();
         const ctrlOrMeta = e.ctrlKey || e.metaKey;
 
-        // DevTools Shortcuts → SOFORT-LOCK
         if (
             key === 'f12' ||
             (ctrlOrMeta && e.shiftKey && ['i','j','c'].includes(key)) ||
@@ -216,17 +186,12 @@
             return;
         }
 
-        // Weitere Shortcuts blockieren
         const blocked = new Set(['a','c','v','x','s','p']);
         if (ctrlOrMeta && blocked.has(key) && !isEditable(e.target)) {
             e.preventDefault();
             return;
         }
     }, { capture: true });
-
-    /* ---------------------------------------------------------
-       PRINT & PRINTSCREEN PROTECTION
-    --------------------------------------------------------- */
 
     document.addEventListener('keydown', (e) => {
         if (!guardActive()) return e.preventDefault();
@@ -319,10 +284,6 @@
         });
     });
 
-    /* ---------------------------------------------------------
-       FOCUS / VISIBILITY PROTECTION
-    --------------------------------------------------------- */
-
     window.addEventListener('blur', () => {
         if (!guardActive()) return;
         enableBlur();
@@ -347,14 +308,7 @@
         }
     });
 
-    /* ---------------------------------------------------------
-       WATERMARK OVERLAY
-    --------------------------------------------------------- */
     html.classList.add('wm-overlay');
-
-    /* ---------------------------------------------------------
-       CONTINUOUS DEVTOOLS DETECTION
-    --------------------------------------------------------- */
 
     function debuggerTrap() {
         if (securityLocked) return;

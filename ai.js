@@ -1,7 +1,6 @@
-
 /*!
- * BYLICKILABS – AI Monitoring Layer (ai.js)
- * Version: 1.1.1
+ * BYLICKILABS – AI Monitoring Framework (ai.js)
+ * Version: 1.0.0
  *
  * Features:
  *  - Error & Promise Monitoring
@@ -22,7 +21,7 @@
     if (!window || !document) return;
 
     const CONFIG = {
-        appName: "Ai Monitoring Layer",
+        appName: "Ai Monitoring Framework",
         appVersion: "1.0.0",
         environment: "production",
         storageKey: "BYLICKILABS_AI_LOGS",
@@ -823,7 +822,7 @@
         const initLog = createLog(
             "system",
             "info",
-            "BYLICKILABS AI Monitoring v1.1 initialisiert.",
+            "BYLICKILABS AI Monitoring v1.0 initialisiert.",
             { config: { appName: CONFIG.appName, env: CONFIG.environment } }
         );
         addLog(initLog);

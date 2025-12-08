@@ -1,13 +1,40 @@
 {
-  "name": "unified-security-framework",
+  "name": "@bylickilabs/unified-security-framework",
   "version": "1.0.0",
-  "description": "",
+  "description": "Unified Security Framework – AI-driven client-side security, protection, DDoS mitigation, monitoring and defensive hardening.",
   "main": "ai.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "ai.js",
+    "ddos-guard.js",
+    "protect.js",
+    "protect.css",
+    "README.md",
+	"LICENCE"
+  ],
+  "keywords": [
+    "security",
+	"protection",
+    "ai",
+    "ddos",
+    "monitoring",
+    "analytics",
+    "performance",
+    "client-side",
+    "frontend",
+    "javascript",
+    "threat-detection",
+    "anomaly-detection",
+    "cybersecurity",
+    "web-security",
+    "hardening",
+    "defense",
+    "mitigation",
+    "bylickilabs",
+	"thorsten bylicki",
+	"github",
+	"developer"
+  ],
+  "author": "BYLICKILABS",
+  "license": "MIT",
   "type": "commonjs"
 }

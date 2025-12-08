@@ -1,38 +1,34 @@
-// ©BYLICKILABS
-// Unified Security Layer – Website Protection
-// Client-Side Throttling, Bot Detection & Headless Fingerprinting v1.1
-// ddos-guard.js
+// ©Thorsten Bylicki | ©BYLICKILABS – Unified Security Framework (ddos-guard.js)
+// Website Protection
+// Client-Side Throttling, Bot Detection & Headless Fingerprinting 
+// v1.0
 
 (function () {
     "use strict";
 
-    // ==============================
-    // CONFIG
-    // ==============================
     const CONFIG = {
-        windowMs: 60 * 1000,          // Sliding window: 60 Sekunden
-        baseMaxRequests: 80,          // Basislimit pro Fenster
-        maxRequestsPenalty: {         // Penalty je Threat-Level
+        windowMs: 60 * 1000,
+        baseMaxRequests: 80,
+        maxRequestsPenalty: {
             low: 0,
             medium: 20,
             high: 40
         },
-        banMs: {                      // Ban-Dauer je Threat-Level
-            low: 1 * 60 * 1000,       // 1 Minute
-            medium: 3 * 60 * 1000,    // 3 Minuten
-            high: 5 * 60 * 1000      // 5 Minuten
+        banMs: {
+            low: 1 * 60 * 1000,
+            medium: 3 * 60 * 1000,
+            high: 5 * 60 * 1000
         },
         storageKey: "es_ddos_guard_state_v2",
         logging: {
             enabled: true,
-            mode: "console",          // "console" | "beacon" | "local" | "silent"
+            mode: "console",
             beaconUrl: "/es-ddos-log",
             localKey: "es_ddos_guard_logs",
             maxEntries: 50
         }
     };
 
-    // Korrelation-ID pro Browser-Sitzung (für Log-Analyse)
     const CORRELATION_ID = (function () {
         try {
             const existing = sessionStorage.getItem("es_ddos_corr_id");
@@ -45,9 +41,7 @@
         }
     })();
 
-    // ==============================
-    // USER-AGENT BOT / TOOL PATTERNS
-    // ==============================
+
     const UA_PATTERNS = [
         "-", "0", "_", "ab/", "acunetix", "ahrefs", "ahrefsbot", "aiohttp", "akamai", "androidwebview", "apachebench", "appdynamics", "arachni", "attack", "aws-health", "baiduspider", "batch", "batch-download", "beam-us-up", "beautifulsoup", "binaryedge", "bingbot", "blazemeter",
         "blekkobot", "bombardier", "bot", "browserless", "bruteforce", "burp", "burpcrawler", "burpsuite", "censys", "cfnetwork", "circleci", "cloud-proxy", "cloudflare-diagnostic", "colly", "contact-scraper", "crawl", "crawler", "crawler4j", "crawling", "curl", "curl-lite", "curl/", "cypress",
@@ -64,9 +58,7 @@
 		"xspider", "yandexbot", "yandeximages", "yandexmetrika", "yandexmobile", "zabbix", "zgrab", "zoomeye"
     ];
 
-    // ==============================
-    // STATE HANDLING
-    // ==============================
+
     function loadState() {
         try {
             const raw = localStorage.getItem(CONFIG.storageKey);
@@ -82,13 +74,10 @@
         try {
             localStorage.setItem(CONFIG.storageKey, JSON.stringify(state || {}));
         } catch (e) {
-            // Ignorieren – Guard darf nie die Seite brechen
         }
     }
 
-    // ==============================
-    // LOGGING
-    // ==============================
+
     function logEvent(type, payload) {
         if (!CONFIG.logging.enabled || CONFIG.logging.mode === "silent") {
             return;
@@ -122,13 +111,9 @@
                 localStorage.setItem(key, JSON.stringify(existing));
             }
         } catch (e) {
-            // Logging darf nie kritisch sein
         }
     }
 
-    // ==============================
-    // UA & HEADLESS DETECTION
-    // ==============================
     function matchSuspiciousUserAgent(uaLower) {
         const hits = [];
         for (let i = 0; i < UA_PATTERNS.length; i++) {
@@ -145,31 +130,26 @@
         const signals = [];
 
         try {
-            // navigator.webdriver – klassischer Headless-Indikator
             if (navigator.webdriver) {
                 score += 2;
                 signals.push("navigator.webdriver === true");
             }
 
-            // Keine Plugins -> Headless-Browser / Automationsumgebung
             if (navigator.plugins && navigator.plugins.length === 0) {
                 score += 1;
                 signals.push("navigator.plugins.length === 0");
             }
 
-            // Keine Sprachen gesetzt
             if (navigator.languages && navigator.languages.length === 0) {
                 score += 1;
                 signals.push("navigator.languages.length === 0");
             }
 
-            // Klare Headless-Keywords im UA
             if (/(headless|phantomjs|slimerjs|ghost|electron)/i.test(uaLower)) {
                 score += 2;
                 signals.push("UA contains headless-related keyword");
             }
 
-            // Chrome Headless-Signatur
             if (typeof window !== "undefined" &&
                 "chrome" in window &&
                 uaLower.indexOf("headlesschrome") !== -1) {
@@ -177,15 +157,12 @@
                 signals.push("Chrome headless signature");
             }
         } catch (e) {
-            // Fingerprinting soll nicht kritisch sein
         }
 
         return { score, signals };
     }
 
-    // ==============================
-    // THREAT-ENGINE
-    // ==============================
+
     function computeRateScore(count, baseMax) {
         if (!baseMax || baseMax <= 0) return 0;
         const ratio = count / baseMax;
@@ -201,10 +178,6 @@
         const headless = detectHeadlessFingerprint(uaLower);
         const rateScore = computeRateScore(count, CONFIG.baseMaxRequests);
 
-        // Gewichtung:
-        // - UA-Matches: max 3 Punkte
-        // - Headless-Fingerprint: wie ermittelt
-        // - Rate-Score: wie berechnet
         const uaScore = Math.min(uaMatches.length, 3);
         const totalScore = uaScore + headless.score + rateScore;
 
@@ -235,9 +208,7 @@
         return CONFIG.banMs[level] || CONFIG.banMs.medium;
     }
 
-    // ==============================
-    // UI – BLOCK SCREEN
-    // ==============================
+
     function showBlockScreen(message) {
         const msgDe = "Die Unified Security Layer Protection hat deinen Zugriff " +
             "vorübergehend eingeschränkt. Bitte warte einen Moment und lade die Seite neu. " +
@@ -334,9 +305,7 @@
         }
     }
 
-    // ==============================
-    // MAIN CONTROL FLOW
-    // ==============================
+
     try {
         const now = Date.now();
         let state = loadState();
@@ -347,7 +316,6 @@
         const ua = (navigator.userAgent || "");
         const uaLower = ua.toLowerCase();
 
-        // 1) Falls bereits gebannt → sofort blocken
         if (state.banUntil && now < state.banUntil) {
             logEvent("ban_active", {
                 ua: ua,
@@ -361,21 +329,17 @@
             return;
         }
 
-        // 2) Neues Zeitfenster?
         if (!state.windowStart || now - state.windowStart > CONFIG.windowMs) {
             state.windowStart = now;
             state.count = 0;
         }
 
-        // 3) Request-Zähler hoch
         state.count = (state.count || 0) + 1;
 
-        // 4) Threat-Level bestimmen
         const threat = evaluateThreat(state, uaLower);
         const effectiveMax = getEffectiveMaxRequests(threat.level);
         const banMs = getBanDuration(threat.level);
 
-        // 5) Überschreitung → Ban & Block
         if (state.count > effectiveMax) {
             state.banUntil = now + banMs;
             state.lastThreatLevel = threat.level;
@@ -398,7 +362,6 @@
             return;
         }
 
-        // 6) Kein Ban, aber ggf. verdächtig → loggen
         state.lastThreatLevel = threat.level;
         state.lastScore = threat.score;
         saveState(state);
@@ -417,7 +380,6 @@
         }
 
     } catch (e) {
-        // Fail-safe: lieber nichts tun als legitime Nutzer aussperren
         try {
             console.error("[Unified Security Layer] Runtime error", e);
         } catch (ignore) {

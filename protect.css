@@ -1,9 +1,8 @@
-/* ================================
-   BYLICKILABS – Protection Styles
-   Version: 1.2
-   ================================= */
+/* =====================================================================
+   ©Thorsten Bylicki | ©BYLICKILABS – Unified Security Framework Styles
+   Version: 1.0
+   ===================================================================== */
 
-/* ===== Micro Animations ===== */
 .gradientPulse {
   background: linear-gradient(120deg, var(--primary), #ffe0ef, var(--primary-2));
   background-size: 200% 200%;
@@ -18,14 +17,12 @@
 .reveal.visible { opacity: 1; transform: translateY(0) }
 .tilt:hover { transform: translateY(-6px) rotate3d(.7,.3,0,3deg) }
 
-/* ===== Anti-Print ===== */
 @media print {
   html, body, * { display: none !important; }
 }
 
-/* ===== Watermark ===== */
 .wm-overlay::before {
-  /*content: "⚡ StackGuard Technologies // CYBER DEFENSE ACTIVE - Powered by BYLICKILABS ⚡";*/
+  /*content: "⚡ CYBER DEFENSE ACTIVE - Powered by BYLICKILABS ⚡";*/
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -40,13 +37,11 @@
   z-index: 9999;
 }
 
-/* ===== Blur on focus loss ===== */
 .sensitive-blur * {
   filter: blur(18px) brightness(0.5);
   transition: filter .2s ease;
 }
 
-/* ===== Blackout overlay ===== */
 .blackout {
   position: fixed;
   inset: 0;
@@ -56,7 +51,6 @@
 }
 .blackout.show { display: block; }
 
-/* ===== Marquee ===== */
 .update-marquee {
   width: 100%;
   overflow: hidden;
@@ -78,5 +72,4 @@
   100% { transform: translateX(-100%) }
 }
 
-/* ===== Utility ===== */
 .no-print * { display: none !important; }
