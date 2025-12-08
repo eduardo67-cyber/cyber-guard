@@ -1,7 +1,7 @@
-/* =======================================================
-   ©Thorsten Bylicki | ©BYLICKILABS – CyberGuard WebLayer 
+/* =============================================
+   ©Thorsten Bylicki | ©BYLICKILABS – CyberGuard 
    Version: 1.0.0
-   ======================================================= */
+   ============================================= */
 
 (() => {
     'use strict';
@@ -62,7 +62,7 @@
                     Die Oberfläche wurde aus Sicherheitsgründen gesperrt.
                 </div>
                 <div style="margin-top:1.2rem; opacity:0.5; font-size:0.8rem;">
-                    ©BYLICKILABS – CyberGuard WebLayer
+                    ©BYLICKILABS – CyberGuard
                 </div>
             </div>
         `;
@@ -112,7 +112,7 @@
             </button>
 
             <p style="margin-top:1rem; font-size:0.75rem; opacity:0.4;">
-                ©Thorsten Bylicki | ©BYLICKILABS – CyberGuard WebLayer 
+                ©Thorsten Bylicki | ©BYLICKILABS – CyberGuard
 
             </p>
         `;

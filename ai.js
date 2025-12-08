@@ -1,5 +1,5 @@
 /*!
- * BYLICKILABS – AI CyberGuard WebLayer (ai.js)
+ * BYLICKILABS – AI CyberGuard  (ai.js)
  * Version: 1.0.0
  *
  * Features:
@@ -21,7 +21,7 @@
     if (!window || !document) return;
 
     const CONFIG = {
-        appName: "AI CyberGuard WebLayer",
+        appName: "AI CyberGuard",
         appVersion: "1.0.0",
         environment: "production",
         storageKey: "BYLICKILABS_AI_LOGS",

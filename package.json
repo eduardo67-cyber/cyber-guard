@@ -1,7 +1,7 @@
 {
-  "name": "@bylickilabs/cyber-guard-web-layer",
+  "name": "@bylickilabs/cyber-guard",
   "version": "1.0.0",
-  "description": "CyberGuard WebLayer – AI-driven client-side security, protection, DDoS mitigation, monitoring and defensive hardening.",
+  "description": "CyberGuard – AI-driven client-side security, protection, DDoS mitigation, monitoring and defensive hardening.",
   "main": "ai.js",
   "files": [
     "ai.js",

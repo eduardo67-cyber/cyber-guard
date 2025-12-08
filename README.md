@@ -1,7 +1,7 @@
-# 🛡 CyberGuard WebLayer
+# 🛡 CyberGuard
 **Version 1.0.0 — Multi-Layer Client-Side Security Protection Suite**
 
-- The **CyberGuard WebLayer** delivers a modular, multi-layer security system for modern web applications.  
+- The **CyberGuard** delivers a modular, multi-layer security system for modern web applications.  
 - It bundles client-side anomaly detection, DDoS-Guard, DOM protection, input shielding, service-worker hardening 
   - and UI blackout controls into one compact package.
 
@@ -45,7 +45,7 @@
 # 📦 Installation (npm)
 
 ```
-npm i @bylickilabs/cyber-guard-web-layer
+npm i @bylickilabs/cyber-guard
 ```
 
 <br>
@@ -60,13 +60,14 @@ Insert into `<head>`:
 
 ## jsDelivr
 ```
-<script src="https://cdn.jsdelivr.net/npm/cyber-guard-web-layer/ai.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/cyber-guard-web-layer/ddos-guard.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/cyber-guard-web-layer/protect.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/ai.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/ddos-guard.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/protect.js" defer></script>
+
 ```
 
 ```
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cyber-guard-web-layer/protect.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/protect.css">
 ````
 
 ---
@@ -74,13 +75,14 @@ Insert into `<head>`:
 ## unpkg
 
 ```
-<script src="https://unpkg.com/cyber-guard-web-layer/ai.js" defer></script>
-<script src="https://unpkg.com/cyber-guard-web-layer/ddos-guard.js" defer></script>
-<script src="https://unpkg.com/cyber-guard-web-layer/protect.js" defer></script>
+<script src="https://unpkg.com/@bylickilabs/cyber-guard/ai.js" defer></script>
+<script src="https://unpkg.com/@bylickilabs/cyber-guard/ddos-guard.js" defer></script>
+<script src="https://unpkg.com/@bylickilabs/cyber-guard/protect.js" defer></script>
+
 ```
 
 ```
-<link rel="stylesheet" href="https://unpkg.com/cyber-guard-web-layer/protect.css">
+<link rel="stylesheet" href="https://unpkg.com/@bylickilabs/cyber-guard/protect.css">
 ```
 
 <br>

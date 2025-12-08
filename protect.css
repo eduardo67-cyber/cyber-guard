@@ -1,7 +1,7 @@
-/* ========================================================
-   ©Thorsten Bylicki | ©BYLICKILABS – CyberGuard WebLayer
+/* ==============================================
+   ©Thorsten Bylicki | ©BYLICKILABS – CyberGuard
    Version: 1.0.0
-   ======================================================== */
+   ============================================== */
 
 .gradientPulse {
   background: linear-gradient(120deg, var(--primary), #ffe0ef, var(--primary-2));
@@ -22,7 +22,7 @@
 }
 
 .wm-overlay::before {
-  /*content: "⚡ WebLayer ACTIVE - Powered by BYLICKILABS ⚡";*/
+  /*content: "⚡ CyberGuard ACTIVE - Powered by BYLICKILABS ⚡";*/
   position: fixed;
   inset: 0;
   pointer-events: none;
