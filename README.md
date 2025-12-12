@@ -1,15 +1,15 @@
 # 🛡 CyberGuard
-**Version 1.0.0 — Multi-Layer Client-Side Security Protection Suite**
+**Version 1.0.1 — Multi-Layer Client-Side Security Protection Suite**
 
 |<img width="1280" height="640" alt="cyberguard" src="https://github.com/user-attachments/assets/8a88eac9-b7eb-40d7-b7a1-bf4f85b0a288" />  |
 |---|
 
-- The **CyberGuard** delivers a modular, multi-layer security system for modern web applications.  
-- It bundles client-side anomaly detection, DDoS-Guard, DOM protection, input shielding, service-worker hardening 
-  - and UI blackout controls into one compact package.
+- CyberGuard delivers a modular, multi-layer security system for modern web applications.
+- It consolidates client-side anomaly detection, DDoS-Guard, DOM protection, input shielding, service-worker hardening,
+  - and UI blackout controls into a single, cohesive security package.
 
-> Designed for frictionless integration into any HTML-based project.  
-> Optimized for performance. Powered by BYLICKILABS.
+> Designed for seamless integration into any HTML-based project.
+  - Performance-optimized. Engineered by BYLICKILABS.
 
 <br>
 
@@ -39,6 +39,81 @@
 - Tamper detection  
 - UI shielding  
 
+## ➕ Additional Features in v1.0.1 (Upgrade from v1.0.0)
+
+Version **v1.0.1** extends the existing feature set with structured telemetry, deeper contextual insight, and professional reporting capabilities. All features from v1.0.0 remain fully intact.
+
+---
+
+### 🔹 Session & Event Telemetry
+- Introduction of a global **Session ID** per page load
+- Sequential **Event IDs** for unique identification of every log entry
+- Consistent event ordering across the entire session
+- Capture of **session start time** for time-based analysis
+
+---
+
+### 🔹 Breadcrumb Tracking (Context History)
+- Recording of relevant pre-events before failures:
+  - User click interactions
+  - JavaScript runtime errors
+  - Unhandled promise rejections
+  - Network & XHR errors
+  - Online / Offline state changes
+- Automatic limitation of breadcrumb history
+- Breadcrumbs embedded into every log entry
+
+---
+
+### 🔹 Per-Event Snapshot Extensions
+Each log entry now includes:
+- **Performance snapshot** (page load time, average FPS, low-FPS frames)
+- **Network snapshot** (request counters, error count, offline state)
+- **Resource snapshot** (failed resource loads)
+- Current breadcrumb context
+
+---
+
+### 🔹 Extended Network Error History
+- Persistent tracking of recent network and XHR failures
+- Storage of:
+  - URL
+  - HTTP status
+  - Request method
+  - Request duration
+- Integrated into incident and session reports
+
+---
+
+### 🔹 Advanced Export & Reporting Capabilities
+- **CSV export** for structured analysis and BI tooling
+- **HTML report** for management, audit, and documentation use
+- **Session-specific export** (logs limited to the active session)
+- Enhanced JSON exports including session and telemetry data
+
+---
+
+### 🔹 UI Overlay Enhancements
+- Additional export controls:
+  - CSV
+  - HTML
+  - Session report
+- Improved button grouping for operational workflows
+- Increased information density without breaking existing behavior
+
+---
+
+### 🔹 Internal Stability & Governance Improvements
+- Event sequence reconstruction from local storage
+- Clean initialization of session state
+- Consistent log structures across all export formats
+- No breaking changes to the existing public API
+
+---
+
+**v1.0.1** elevates the AI Monitoring Layer from basic client-side monitoring to a **fully observability-ready telemetry and incident analysis system**, remaining entirely backend-free and privacy-first.
+
+
 <br>
 
 ---
@@ -63,14 +138,14 @@ Insert into `<head>`:
 
 ## jsDelivr
 ```
-<script src="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/ai.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/ddos-guard.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/protect.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/ai.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/ddos-guard.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/protect.min.js" defer></script>
 
 ```
 
 ```
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/protect.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bylickilabs/cyber-guard/protect.min.css">
 ````
 
 ---
@@ -78,14 +153,14 @@ Insert into `<head>`:
 ## unpkg
 
 ```
-<script src="https://unpkg.com/@bylickilabs/cyber-guard/ai.js" defer></script>
-<script src="https://unpkg.com/@bylickilabs/cyber-guard/ddos-guard.js" defer></script>
-<script src="https://unpkg.com/@bylickilabs/cyber-guard/protect.js" defer></script>
+<script src="https://unpkg.com/@bylickilabs/cyber-guard/ai.min.js" defer></script>
+<script src="https://unpkg.com/@bylickilabs/cyber-guard/ddos-guard.min.js" defer></script>
+<script src="https://unpkg.com/@bylickilabs/cyber-guard/protect.min.js" defer></script>
 
 ```
 
 ```
-<link rel="stylesheet" href="https://unpkg.com/@bylickilabs/cyber-guard/protect.css">
+<link rel="stylesheet" href="https://unpkg.com/@bylickilabs/cyber-guard/protect.min.css">
 ```
 
 <br>
@@ -181,3 +256,4 @@ document.onclick=reEnable
 # 🛡 License  
 MIT © BYLICKILABS
 [LICENSE](LICENSE)
+
